@@ -27,7 +27,7 @@ Les missions étaient en multiple :
   - Administrateur (gestion utilisateurs, logs système)
 - Production du rendu final avec documentation technique et présentation
 
-### b) Stratégie
+<h2 style="color:#e91e63>b) Stratégie</h2>
 
 La stratégie que nous avons utilisée était la méthode agile. Nous nous donnions souvent de lundi à vendredi pour réaliser les tâches que nous avions prévu le weekend auparavant. Cela nous permettait d'être le plus réactif envers le client (en fonction des évolutions de ses directions). Notre équipe était composé d'une product owner / manageuse et de deux développeurs. Nous avions aussi un tableau Kanban pour visualiser les tâches en cours et leur progression sur Trello.
 
