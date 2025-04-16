@@ -488,6 +488,8 @@ Pour le dernier profil, le client a la possibilité de visualiser l'ensemble des
 
 ## VI) Vidéo de présentation sur ce que vous avez réalisé (que vous aviez en charge)
 
+[Lien vers la vidéo de présentation de nos parties individuelles](https://www.youtube.com/watch?v=Iv5gFbdfd-k&ab_channel=AlexandreDesforges)
+
 ## VII) Sources
 
 - W3C (Doc générale)
