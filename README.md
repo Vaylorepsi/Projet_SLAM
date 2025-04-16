@@ -2,6 +2,7 @@
 
 ![Logo Brasserie](image.png)
 Pour le titre de chaque parties, nous allons mettre un code couleur pour différencier le travail de chacun.
+
 **Équipe :**
 - Desforges Alexandre (représenté par la couleur bleu)
 - Issaoui Khaoula (représentée par la couleur rose)
