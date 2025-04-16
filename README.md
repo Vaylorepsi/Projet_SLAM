@@ -7,7 +7,7 @@ Pour le titre de chaque parties, nous allons mettre un code couleur pour différ
 - Issaoui Khaoula (représentée par la couleur rose)
 - Kuras Maxime (représenté par la couleur verte)
 
-## I) Présentation du projet
+## 🔵🟢I) Présentation du projet
 
 Actuellement en première année à l'EPSI nous avions un projet pour l'atelier SLAM1. Nous avions comme projet d'offrir une solution dans le but de développer la présence en ligne à une organisation, ainsi que de lui offrir des outils de gestion adaptés à ses besoins. Cette organisation est La Brasserie Terroir & Saveurs, située dans les Hauts-de-France.
 
@@ -27,14 +27,14 @@ Les missions étaient en multiple :
   - Administrateur (gestion utilisateurs, logs système)
 - Production du rendu final avec documentation technique et présentation
 
-![🌸 b) Stratégie](https://img.shields.io/badge/-Fonctionnalités%20réalisées-pink)
+###🌸b) Stratégie
 
 
 La stratégie que nous avons utilisée était la méthode agile. Nous nous donnions souvent de lundi à vendredi pour réaliser les tâches que nous avions prévu le weekend auparavant. Cela nous permettait d'être le plus réactif envers le client (en fonction des évolutions de ses directions). Notre équipe était composé d'une product owner / manageuse et de deux développeurs. Nous avions aussi un tableau Kanban pour visualiser les tâches en cours et leur progression sur Trello.
 
 ![Tableau Kanban](image-2.png)
 
-## II) Présentation de la structure de données
+## 🟢II) Présentation de la structure de données
 
 Nous avons eu des soucis concernant les associations entre les différentes tables sur PHP My Admin cela provient du fait que le type des tables défini par défaut est en "MyISAM" et nous avons modifier le type en "InnoDB".
 
@@ -158,7 +158,7 @@ Cette base de données assure donc une gestion complète, centralisée et évolu
 
 ## III) Présentation de la structure du programme
 
-### Arborescence :
+### 🔵Arborescence :
 
 ```
 /
@@ -200,7 +200,7 @@ Fonction permettant d'ajouter un message de type évènement dans un fichier log
 
 Connexion à la base de données avec gestion d'erreur.
 
-### a) Connexion
+### 🔵a) Connexion
 
 ![Formulaire connexion](image-7.png)
 
@@ -220,7 +220,7 @@ Si tout est bon, on attribue à cette session des données qui nous seront utile
 
 On récupère la valeur dans la bdd qui nous indique si c'est ça première connexion alors qu'il doit changer de mot de passe (lors de la création d'un compte, le mot de passe est automatiquement "motdepasse" et l'utilisateur doit le changer lors de sa première connexion). Il sera donc redirigé vers une page qui lui permettra de changer son mot de passe sinon il pourra accéder à son profil.
 
-### b) Changement mot de passe
+### 🔵b) Changement mot de passe
 
 ![Formulaire changement mdp](image-11.png)
 
@@ -230,7 +230,7 @@ Formulaire permettant d'entrée son nouveau mot de passe. Deux fois entrée pour
 
 On vérifie l'entrée du formulaire puis on vérifie la similitude entre les deux mots de passes et si oui alors on met à jour la base de données avec le nouveau mot de passe haché et on le redirige vers l'index et on n'oublie pas de modifier aussi l'état de sa première connexion pour ses prochains venus sur le site.
 
-### c) Admin
+### 🔵c) Admin
 
 ![Mise à jour utilisateur](image-13.png)
 
@@ -252,7 +252,7 @@ On aura ici un tableau affichant les colonnes pour chaque utilisateur avec des a
 
 Ici on va afficher un form quand l'utilisateur cliquera sur le bouton ajouter utilisateur qui envoyer en post les infos
 
-### d) Brasseur
+### 🔵d) Brasseur
 
 ![Requêtes tables](image-18.png)
 
@@ -283,7 +283,7 @@ Affichage des recettes
 
 Affichage du stock des matières premières.
 
-### e) Client
+### 🔵e) Client
 
 ![Gestion panier](image-26.png)
 
@@ -315,7 +315,7 @@ Affichage des détails de la vente en fonction de l'id de la vente sélectionné
 
 Affichage des produits disponibles avec possibilité de commander et l'id, et la quantité passeront dans le form.
 
-### f) Direction
+### 🟢f) Direction
 
 ![Ajout recette](image-34.png)
 Ajout d'une recette en vérifiant que l'input nommé « ajout_recette » est appelé par l'utilisateur, il lance donc le « try / catch », dans la try nous avons la requête SQL qui est placée dans la variable $sql. Il y a une requête préparer avec le bout de code $stmt (statement). Dans le catch nous avons la gestion d'erreur lié au PHP data object.
@@ -358,7 +358,7 @@ Le formulaire pour l'ajout d'une dépense.
 
 Nous avons ici le tableau associatif pour les ventes de chaque produit.
 
-### g) Caissier
+### 🟢g) Caissier
 
 ![Récupération données](image-43.png)
 
@@ -410,7 +410,7 @@ Une fonction qui permet d'afficher les onglets que l'on souhaite et cacher les a
 
 ## IV) Présentation des fonctionnalités du programme
 
-### A) Site Vitrine
+### 🟢🔵A) Site Vitrine
 
 Nous retrouvons sur le site vitrine, un message de bienvenue, les produits que l'on présente et qui sommes-nous.
 
@@ -418,13 +418,13 @@ Nous avons la navbar sur la gauche avec le logo et un message explicitant le rô
 
 ![Site vitrine](image-56.png)
 
-### B) Système de Connexion
+### 🔵B) Système de Connexion
 
 Pour ce qui est du système de connexion, nous avons un simple formulaire qui renvoie au serveur mot de passe et login, une vérification est faite par la base de données et la page qui est associé à notre rôle sera déployée. 
 
 ![Système connexion](image-57.png)
 
-### C) Administration des Comptes (Profil Administrateur)
+### 🔵C) Administration des Comptes (Profil Administrateur)
 
 Pour ce qui est de la page administrateurs, nous avons bien les fonctionnalités de gestions des différents utilisateurs, la possibilité de modifier, supprimer ou ajouter des comptes. Seul l'administrateur peut créer des comptes ayant un rôle autre que client. Nous avons donc le tableau qui renvoie l'ensemble des utilisateurs de la base de données, et à droite des actions permettant de supprimer ou modifier les comptes.
 
@@ -432,7 +432,7 @@ En bas se trouve l'onglet d'ajout d'utilisateur avec un simple formulaire renvoy
 
 ![Admin interface](image-58.png)
 
-### D) Espace brasseur
+### 🔵D) Espace brasseur
 
 Le profil brasseur nous permet de gérer le stock de bières présent, il peut modifier ou supprimer du stock.
 
@@ -447,7 +447,7 @@ Il a également la possibilité de voir le stock de matière premières à savoi
 
 ![Stock matières premières](image-61.png)
 
-### E) Espace Direction
+### 🟢E) Espace Direction
 
 Le profil Direction a deux grosses fonctionnalités principales, la possibilité de gérer le bilan financier, avec un filtre par mois et années. Le bilan est donc dû au calcul suivant : Total recettes -- Total Dépenses.
 
@@ -459,7 +459,7 @@ La seconde fonctionnalité majeure est le bilan commercial qui n'est ni plus ni 
 
 ![Bilan commercial](image-63.png)
 
-### F) Espace Caissier
+### 🟢F) Espace Caissier
 
 Le profil caissier possède 3 grandes fonctionnalités qui sont ; "L'enregistrement d'une vente à un client, Créer un compte client et Valider une réservation"
 
