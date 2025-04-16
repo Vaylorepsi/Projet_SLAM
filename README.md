@@ -476,7 +476,7 @@ La dernière fonctionnalité est la réservation. Sachant que le profil client p
 
 ![Validation réservation](image-66.png)
 
-### G) Espace Client
+### 🔵G) Espace Client
 
 Pour le dernier profil, le client a la possibilité de visualiser l'ensemble des commandes qu'il a effectué. Mais également de passer commande, d'où l'importance de la fonctionnalité du profil caissier.
 
