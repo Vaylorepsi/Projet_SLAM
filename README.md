@@ -5,7 +5,7 @@
 Pour le titre de chaque parties, nous allons mettre un code couleur pour différencier le travail de chacun.
 
 **Équipe :**
-- Desforges Alexandre (représenté par la couleur bleu)
+- Desforges Alexandre (représenté par la couleur bleu) ![Lien du github d'Alexandre](https://github.com/lugzz/projet_Slam)
 - Issaoui Khaoula (représentée par la couleur rose)
 - Kuras Maxime (représenté par la couleur verte)
 
