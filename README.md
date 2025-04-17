@@ -1,6 +1,6 @@
 # PROJET SLAM1
 
-![Logo Brasserie](image1.png)
+![Logo Brasserie](Image1.png)
 Pour le titre de chaque parties, nous allons mettre un code couleur pour différencier le travail de chacun.
 
 **Équipe :**
