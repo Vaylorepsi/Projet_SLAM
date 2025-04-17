@@ -194,139 +194,141 @@ Cette base de données assure donc une gestion complète, centralisée et évolu
 
 ### Fonctions/fonctionnalité récurrente :
 
-![Fonction de logging](image-5.png)
+![Fonction de logging]
 
 Fonction permettant d'ajouter un message de type évènement dans un fichier log.txt (exemple : [2025-04-09 09:54:33] Tentative de connexion par un utilisateur)
 
-![Connexion BDD](image-6.png)
+![Connexion BDD]
 
 Connexion à la base de données avec gestion d'erreur.
 
-### 🔵a) Connexion
+### 🔵a) Connexion (connexion.php)
 
-![Formulaire connexion](image-7.png)
+![Formulaire connexion]
 
-Formulaire permettant de se connecter avec les bons types et aussi le required qui oblige l'insertion d'une valeur dans l'entrée utilisateur
 
-![Vérification saisies](image-8.png)
+Formulaire permettant de se connecter avec les bons types et aussi le required qui oblige l'insertion d'une valeur dans l'entrée utilisateur. (Ligne 122 à 131)
 
-Vérification des saisies utilisateur côté serveur.
+![Vérification saisies]
 
-![Récupération info utilisateur](image-9.png)
 
-On récupère les informations de l'utilisateur grâce à son login et on vérifie avec la similitude du mot de passe enregistré haché dans la bdd et l'entrée utilisateur
+Vérification des saisies utilisateur côté serveur. (Ligne 10 à 13)
+
+![Récupération info utilisateur]
+
+On récupère les informations de l'utilisateur grâce à son login et on vérifie avec la similitude du mot de passe enregistré haché dans la bdd et l'entrée utilisateur. (Ligne 28 à 32)
 
 Si tout est bon, on attribue à cette session des données qui nous seront utiles sur toutes les autres pages comme l'id, le role ainsi que son login.
 
-![Vérification première connexion](image-10.png)
+![Vérification première connexion]
 
-On récupère la valeur dans la bdd qui nous indique si c'est ça première connexion alors qu'il doit changer de mot de passe (lors de la création d'un compte, le mot de passe est automatiquement "motdepasse" et l'utilisateur doit le changer lors de sa première connexion). Il sera donc redirigé vers une page qui lui permettra de changer son mot de passe sinon il pourra accéder à son profil.
+On récupère la valeur dans la bdd qui nous indique si c'est ça première connexion alors qu'il doit changer de mot de passe (lors de la création d'un compte, le mot de passe est automatiquement "motdepasse" et l'utilisateur doit le changer lors de sa première connexion). Il sera donc redirigé vers une page qui lui permettra de changer son mot de passe sinon il pourra accéder à son profil. (Ligne 35 à 42)
 
 ### 🔵b) Changement mot de passe
 
-![Formulaire changement mdp](image-11.png)
+![Formulaire changement mdp]
 
-Formulaire permettant d'entrée son nouveau mot de passe. Deux fois entrée pour plus de sécurité
+Formulaire permettant d'entrée son nouveau mot de passe. Deux fois entrée pour plus de sécurité. (Ligne 120 à 135)
 
-![Vérification et mise à jour mdp](image-12.png)
+![Vérification et mise à jour mdp]
 
-On vérifie l'entrée du formulaire puis on vérifie la similitude entre les deux mots de passes et si oui alors on met à jour la base de données avec le nouveau mot de passe haché et on le redirige vers l'index et on n'oublie pas de modifier aussi l'état de sa première connexion pour ses prochains venus sur le site.
+On vérifie l'entrée du formulaire puis on vérifie la similitude entre les deux mots de passes et si oui alors on met à jour la base de données avec le nouveau mot de passe haché et on le redirige vers l'index et on n'oublie pas de modifier aussi l'état de sa première connexion pour ses prochains venus sur le site. (Ligne 29 à 49)
 
 ### 🔵c) Admin
 
-![Mise à jour utilisateur](image-13.png)
+![Mise à jour utilisateur]
 
-Ici on update la base de données en changeant les infos que l'admin aura indiqué dans le form et on se referera à l'id utilisateur
+Ici on update la base de données en changeant les infos que l'admin aura indiqué dans le form et on se referera à l'id utilisateur. (Ligne 28 à 50)
 
-![Ajout utilisateur](image-14.png)
+![Ajout utilisateur]
 
-Ici on va ajouter un utilisateur à la base de donnée en prenant comme login premiere lettre du prénom + nom de famille+25, on va hacher le mot de passe via la fonction php, et aussi on verifie que le login n'existe pas déjà dans la bdd (unicité)
+Ici on va ajouter un utilisateur à la base de donnée en prenant comme login premiere lettre du prénom + nom de famille+25, on va hacher le mot de passe via la fonction php, et aussi on verifie que le login n'existe pas déjà dans la bdd (unicité). (Ligne 53 à 91)
 
-![Suppression utilisateur]image-15.png)
+![Suppression utilisateur]
 
-Ici on va venir supprimer un utilisateur via son id.
+Ici on va venir supprimer un utilisateur via son id. (Ligne 95 à 110)
 
-![Tableau utilisateurs](image-16.png)
+![Tableau utilisateurs]
 
-On aura ici un tableau affichant les colonnes pour chaque utilisateur avec des actions de sois modifié l'utilisateur ou soit le supprimer
+On aura ici un tableau affichant les colonnes pour chaque utilisateur avec des actions de sois modifié l'utilisateur ou soit le supprimer. (Ligne 234 à 270).
 
-![Formulaire ajout utilisateur](image-17.png)
+![Formulaire ajout utilisateur]
 
-Ici on va afficher un form quand l'utilisateur cliquera sur le bouton ajouter utilisateur qui envoyer en post les infos
+Ici on va afficher un form quand l'utilisateur cliquera sur le bouton ajouter utilisateur qui envoyer en post les infos. (Ligne 289 à 306)
 
 ### 🔵d) Brasseur
 
-![Requêtes tables](image-18.png)
+![Requêtes tables]
 
-Requêtes permettant de récupérer la table produits et recettes
+Requêtes permettant de récupérer la table produits et recettes. (Ligne 52 à 67).
 
-![Calculs pour recette](image-19.png)
-Ici on récupère les infos entrées par le brasseur et on applique les calculs recommandés par Mr. Lecomte pour ensuite l'afficher au brasseur les ingrédients de sa recette.
+![Calculs pour recette]
+Ici on récupère les infos entrées par le brasseur et on applique les calculs recommandés par Mr. Lecomte pour ensuite l'afficher au brasseur les ingrédients de sa recette. (Ligne 70 à 91)
 
-![Enregistrement recette](image-20.png)
-On va venir enregistrer dans la bdd la recette créer par le brasseur si celui-ci clique sur enregistrer la recette.
+![Enregistrement recette]
+On va venir enregistrer dans la bdd la recette créer par le brasseur si celui-ci clique sur enregistrer la recette. (Ligne 94 à 115)
 
-![Formulaire recette](image-21.png)
+![Formulaire recette]
 
-Il s'agit du formulaire pour que le brasseur ait une recette.
+Il s'agit du formulaire pour que le brasseur ait une recette. (Ligne 372 à 390)
 
-![Affichage produits](image-22.png)
-On va afficher les produits avec leurs caractéristiques
+![Affichage produits]
+On va afficher les produits avec leurs caractéristiques. (Ligne 279 à 311).
 
-![Affichage résultats calcul](image-23.png)
+![Affichage résultats calcul]
 
-On va afficher les résultats du calcul du brasseur et lui proposer l'option de l'enregistrer
+On va afficher les résultats du calcul du brasseur et lui proposer l'option de l'enregistrerLigne(392 à 427)
 
-![Affichage recettes](image-24.png)
+![Affichage recettes]
 
-Affichage des recettes
+Affichage des recettes (Ligne 433 à 473)
 
-![Affichage stock](image-25.png)
+![Affichage stock]
 
-Affichage du stock des matières premières.
+Affichage du stock des matières premières. (Ligne 475 à 503)
 
 ### 🔵e) Client
 
-![Gestion panier](image-26.png)
+![Gestion panier]
 
-On va récupérer depuis le form l'id du produit ainsi que sa quantité puis on rentrera le tout dans la variable $_SESSION['PANIER'] en vérifiant qu'il existe bien et que le produit sélectionné n'est pas déjà dans le panier auquel cas on rajoute sa nouvelle quantité.
+On va récupérer depuis le form l'id du produit ainsi que sa quantité puis on rentrera le tout dans la variable $_SESSION['PANIER'] en vérifiant qu'il existe bien et que le produit sélectionné n'est pas déjà dans le panier auquel cas on rajoute sa nouvelle quantité. (Ligne 24 à 65)
 
-![Récupération fidélité et ventes](image-27.png)
+![Récupération fidélité et ventes]
 
-Ici on va pouvoir récupérer les points de fideliter du client ainsi que ses ventes et on pourra sélectionner les détails des ventes en fonction alors de l'id de la vente.
+Ici on va pouvoir récupérer les points de fideliter du client ainsi que ses ventes et on pourra sélectionner les détails des ventes en fonction alors de l'id de la vente. (Ligne 69 à 88)
 
-![Sélection produits disponibles](image-28.png)
+![Sélection produits disponibles]
 
-On sélectionne les produits disponibles, alors ou leur état = 1 lorsque le client clique sur commander.
+On sélectionne les produits disponibles, alors ou leur état = 1 lorsque le client clique sur commander. (Ligne 90 à 100)
 
-![Affichage points fidélité](image-29.png)
+![Affichage points fidélité]
 
-Affichage points de fidélité
+Affichage points de fidélité. (Ligne 243 à 287)
 
-![Affichage commandes](image-30.png)
+![Affichage commandes]
 
-![Affichage commandes avec détails](image-31.png)
+![Affichage commandes avec détails]
 
-Affichage des commandes avec une colonne action permettant de visualiser les détails de la commande
+Affichage des commandes avec une colonne action permettant de visualiser les détails de la commande. (Ligne 295 à 317)
 
-![Affichage détails vente](image-32.png)
+![Affichage détails vente]
 
-Affichage des détails de la vente en fonction de l'id de la vente sélectionnée.
+Affichage des détails de la vente en fonction de l'id de la vente sélectionnée. 
 
-![Affichage produits disponibles](image-33.png)
+![Affichage produits disponibles]
 
-Affichage des produits disponibles avec possibilité de commander et l'id, et la quantité passeront dans le form.
+Affichage des produits disponibles avec possibilité de commander et l'id, et la quantité passeront dans le form.(Ligne 325 à 338)
 
 ### 🟢f) Direction
 
-![Ajout recette](image-34.png)
-Ajout d'une recette en vérifiant que l'input nommé « ajout_recette » est appelé par l'utilisateur, il lance donc le « try / catch », dans la try nous avons la requête SQL qui est placée dans la variable $sql. Il y a une requête préparer avec le bout de code $stmt (statement). Dans le catch nous avons la gestion d'erreur lié au PHP data object.
+![Ajout recette]
+Ajout d'une recette en vérifiant que l'input nommé « ajout_recette » est appelé par l'utilisateur, il lance donc le « try / catch », dans la try nous avons la requête SQL qui est placée dans la variable $sql. Il y a une requête préparer avec le bout de code $stmt (statement). Dans le catch nous avons la gestion d'erreur lié au PHP data object. (Ligne 15 à 35)
 
-![Ajout dépenses](image-35.png)
+![Ajout dépenses]
 
-Même processus pour l'ajout des dépenses.
+Même processus pour l'ajout des dépenses. (Ligne 38 à 51)
 
-![Calcul recettes, dépenses, ventes](image-36.png)
+![Calcul recettes, dépenses, ventes]
 
 Pour ce qui est du calcul des recettes, dépenses et ventes il y a un processus identique avec la préparation des requêtes SQL ici dans la variable : « $SQL _recettes », « SQL_dépenses », « sql_ventes_produits ».
 
@@ -334,81 +336,83 @@ Nous avons le calcul des recettes, dépenses et ventes dans les requêtes SQL et
 
 A chaque requête j'ai défini une variable ($recettes, $depenses, $ventes_produits) dans laquelle on aura un tableau associatif pour l'affichage sur la page HTML qui est construit par l'argument du fetch. On le voit ici : 
 
-![Fetch PDO](image-37.png)
+(Ligne 56 à 86)
 
-Une fois le calcul des recettes et dépenses, je défini une variable $bilan qui sera la soustraction entre recettes et dépenses.
+![Fetch PDO]
 
-Deux variables ont été créées pour l'affichage par moi ou année et qui sera mis.
+Une fois le calcul des recettes et dépenses, je défini une variable $bilan qui sera la soustraction entre recettes et dépenses. (Ligne 75)
 
-![Variables mois et année](image-38.png)
+Deux variables ont été créées pour l'affichage par moi ou année et qui sera mis. (Ligne 53 et 54)
 
-On voit sur la partie HTML les deux appels aux variables $mois et $année.
+![Variables mois et année]
 
-![Affichage bilan](image-39.png)
+On voit sur la partie HTML les deux appels aux variables $mois et $année. (Ligne 204 à 216)
 
-Affichage du total recette et dépenses avec le bilan, ils auront un affichage à 2 décimal après la virgule.
+![Affichage bilan]
 
-![Formulaire ajout recette](image-40.png)
+Affichage du total recette et dépenses avec le bilan, ils auront un affichage à 2 décimal après la virgule. (Ligne 232 à 245)
 
-Le formulaire pour l'ajout d'une recette.
+![Formulaire ajout recette]
 
-![Formulaire ajout dépense](image-41.png)
+Le formulaire pour l'ajout d'une recette. (Ligne 247 à 264)
 
-Le formulaire pour l'ajout d'une dépense.
+![Formulaire ajout dépense]
 
-![Tableau associatif ventes](image-42.png)
+Le formulaire pour l'ajout d'une dépense. (Ligne 265 à 286)
 
-Nous avons ici le tableau associatif pour les ventes de chaque produit.
+![Tableau associatif ventes]
+
+Nous avons ici le tableau associatif pour les ventes de chaque produit. (ligne 288 à 306).
 
 ### 🟢g) Caissier
 
-![Récupération données](image-43.png)
+![Récupération données]
 
-Nous avons la récupération des données des tables produits, réservations, clients.
+Nous avons la récupération des données des tables produits, réservations, clients. (Ligne 15 à 60)
 
-![Création compte client](image-44.png)
+![Création compte client]
 
 Nous avons ici la création d'un compte client avec la création du mot de passe, du hachage, et l'implémentation dans la table user et client_fideliter. On utilise la fonction beginTransaction(). Elle va nous servir a ce qu'il n'y ait pas de mauvais enregistrement des données dans les tables client_fideliter et user. Puisque que nous avons l'utilisation de l'id utilisateur pour créer un compte fidélité. Avec la variable : « $user_id = $pdo->lastInsertId(). (Cette fonction nous permet de récupérer l'id qui vient d'être créer pour être sur qu'il s'agit bien du bon utilisateur.
 
-Nous avons donc une gestion d'erreur avec le try catch mais également avec le beginTransaction, commit et rollback.
+Nous avons donc une gestion d'erreur avec le try catch mais également avec le beginTransaction, commit et rollback. (Ligne 64 à 115).
 
-![Validation réservation](image-45.png)
+![Validation réservation]
 
-Nous avons la validation de la réservation avec le même prince de gestion d'erreur et de requêtes.
+Nous avons la validation de la réservation avec le même prince de gestion d'erreur et de requêtes. (Ligne 118 à 134).
 
-![Enregistrement vente](image-46.png)
+![Enregistrement vente]
 
-L'enregistrement d'une vente par un caissier avec la vérification de l'existence du client puis le calcul du total de la vente avec la gestion du stock.
+L'enregistrement d'une vente par un caissier avec la vérification de l'existence du client puis le calcul du total de la vente avec la gestion du stock. (ligne 137 à 267)
 
-![Gestion remises et fidélité](image-47.png)
+![Gestion remises et fidélité]
 
-Ici la gestion des remises et de l'utilisation des points de fidélité puis l'enregistrement de la vente en base de données.
+Ici la gestion des remises et de l'utilisation des points de fidélité puis l'enregistrement de la vente en base de données.(Ligne 190 à 211)
 
-![Incrémentation tables](image-50.png)
+![Incrémentation tables]
 
 Puis incrémentation de la table vente détails et du stock dans la table produit fini.
 
-Ajout des points de fidélité défini par 10% du montant total payé par le client.
+Ajout des points de fidélité défini par 10% du montant total payé par le client. (ligne 137 à 267)
 
-![Onglets caissier](image-51.png)
+![Onglets caissier]
 
-La partie HTML qui avec les 3 onglets qui représente les grandes fonctionnalités du profil caissier.
+La partie HTML qui avec les 3 onglets qui représente les grandes fonctionnalités du profil caissier. (Ligne 330 à 332)
 
-![Formulaire enregistrement vente](image-52.png)
+![Formulaire enregistrement vente]
 
-Le formulaire pour enregistrer la vente à un client.
+Le formulaire pour enregistrer la vente à un client. (ligne 336 à 399).
 
-![Formulaire création client](image-53.png)
+![Formulaire création client]
 
-Formulaire de création d'un compte client. Qui ne peut qu'enregistrer le nom, le prénom et le mail.
+Formulaire de création d'un compte client. Qui ne peut qu'enregistrer le nom, le prénom et le mail. (Ligne 402 à 433)
 
-![Gestion validations réservations](image-54.png)
+![Gestion validations réservations]
 
-Gestion des validations des réservations de l'ensemble des clients.
+Gestion des validations des réservations de l'ensemble des clients. (Ligne 436 à 473)
 
-![Fonction affichage onglets](image-55.png)
 
-Une fonction qui permet d'afficher les onglets que l'on souhaite et cacher les autres qui contiennent une class = « tab-content ».
+
+Une fonction qui permet d'afficher les onglets que l'on souhaite et cacher les autres qui contiennent une class = « tab-content ». (Ligne 478 à 486)
 
 ## IV) Présentation des fonctionnalités du programme
 
